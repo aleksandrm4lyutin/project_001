@@ -69,20 +69,12 @@ class _DummyAppState extends State<DummyApp> {
   }
 
   void checkBallPosition() {
-    if(!up) {
-
-    } else {
-
-    }
-
     if(!up && position > zoneEnd) {
       play = false;
       if(currentScore > maxScore) {
         maxScore = currentScore;
       }
       currentScore = 0;
-    } else {
-      play = true;
     }
   }
 
