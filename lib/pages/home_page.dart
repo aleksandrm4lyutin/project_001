@@ -1,6 +1,7 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:project_001/pages/dummy_app.dart';
 import 'package:project_001/pages/web_view_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -8,6 +9,7 @@ import 'error_page.dart';
 import 'loading_page.dart';
 import 'no_internet_page.dart';
 import 'package:device_info_plus/device_info_plus.dart';
+import 'dart:io';
 
 
 class HomePage extends StatefulWidget {
@@ -69,29 +71,54 @@ class _HomePageState extends State<HomePage> {
   ///-------------------------------------------------------------
 
   ///----------------Check link on device---------------------
-  Future<bool> checkLink() async {
-    final SharedPreferences prefs = await _prefs;
-    var l = prefs.getString(remoteConfigLinkName);
-    if(l != null) {
-      link = l;
-      return true;
-    } else {
-      return false;
-    }
-  }
+  // Future<bool> checkLink() async {
+  //   final SharedPreferences prefs = await _prefs;
+  //   var l = prefs.getString(remoteConfigLinkName);
+  //   if(l != null) {
+  //     link = l;
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
   ///----------------------------------------------------------
 
-  ///-------------------------Save link-----------------------
-  Future<bool> saveLink(String link) async {
-    final SharedPreferences prefs = await _prefs;
+  Future<String> get _localPath async {
+    final directory = await getApplicationDocumentsDirectory();
+    return directory.path;
+  }
+
+  Future<File> get _localFile async {
+    final path = await _localPath;
+    return File('$path/url.txt');
+  }
+
+  Future<File> saveLink(String url) async {
+    final file = await _localFile;
+    return file.writeAsString(url);
+  }
+
+  Future<bool> checkLink() async {
     try {
-      prefs.setString(remoteConfigLinkName, link);
+      final file = await _localFile;
+      final contents = await file.readAsString();
+      link = contents;
       return true;
-    } catch(e) {
+    } catch (e) {
       return false;
     }
-
   }
+
+  ///-------------------------Save link-----------------------
+    // Future<bool> saveLink(String link) async {
+  //   final SharedPreferences prefs = await _prefs;
+  //   try {
+  //     prefs.setString(remoteConfigLinkName, link);
+  //     return true;
+  //   } catch(e) {
+  //     return false;
+  //   }
+  // }
   ///---------------------------------------------------------
 
   ///-------------------------Delete link-----------------------
