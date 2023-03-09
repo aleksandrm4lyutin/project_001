@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class DummyApp extends StatefulWidget {
-  const DummyApp({Key? key}) : super(key: key);
+  final Size size;
+
+  const DummyApp({Key? key,
+    required this.size,
+  }) : super(key: key);
 
   @override
   State<DummyApp> createState() => _DummyAppState();
@@ -10,8 +14,9 @@ class DummyApp extends StatefulWidget {
 class _DummyAppState extends State<DummyApp> {
 
   ///
-  double bottom = 550;
-  double top = 50;
+  late double bottom;
+  late double top;
+  double pathHeight = 500;
   double speed = 0.75;
   double zoneHeight = 150;
   double ballSize = 80;
@@ -30,6 +35,8 @@ class _DummyAppState extends State<DummyApp> {
 
 
   void setInitialCoordinates() {
+    bottom = (widget.size.height * 0.5) + 180;
+    top = bottom - pathHeight;
     start = bottom;
     end = bottom;
     left = 0;
@@ -194,7 +201,7 @@ class _DummyAppState extends State<DummyApp> {
             );
           },
           child: Image(
-            image: const AssetImage('assets/playstore.png'),
+            image: const AssetImage('assets/ball.png'),
             height: ballSize,
             width: ballSize,
           ),

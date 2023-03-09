@@ -1,12 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.amalyutin.project_001">
+    package="two.bet.apps">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CAMERA"/>
 
    <application
-        android:label="project_001"
+        android:label="22"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

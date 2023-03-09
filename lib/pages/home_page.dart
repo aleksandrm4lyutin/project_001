@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   late Future startUpFuture;
   String errorMsg = '';
   String link = '';
-  static const remoteConfigLinkName = 'link';
+  static const remoteConfigLinkName = 'url';
 
   @override
   void initState() {
@@ -180,13 +180,14 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+
     return FutureBuilder(
       future: startUpFuture,
       builder: (context, snapshot) {
         if(snapshot.connectionState == ConnectionState.done) {
           switch(snapshot.data) {
             case 0: /// Dummy app
-              return const DummyApp();
+              return DummyApp(size: MediaQuery.of(context).size);
             case 1: /// WebView
               return WebViewPage(link: link);
             case 2: /// No Internet screen
@@ -203,7 +204,7 @@ class _HomePageState extends State<HomePage> {
                 }
               );
             default: /// Dummy app
-              return const DummyApp();
+              return DummyApp(size: MediaQuery.of(context).size);
           }
         } else {
           /// Loading screen

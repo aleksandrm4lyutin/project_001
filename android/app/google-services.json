@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "185879928180",
-    "project_id": "project001-99422",
-    "storage_bucket": "project001-99422.appspot.com"
+    "project_number": "1048090967106",
+    "project_id": "va2k2u",
+    "storage_bucket": "va2k2u.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:185879928180:android:baccabc6392d989954a021",
+        "mobilesdk_app_id": "1:1048090967106:android:dd70a2fb8eccb14a5701db",
         "android_client_info": {
-          "package_name": "com.amalyutin.project_001"
+          "package_name": "two.bet.apps"
         }
       },
       "oauth_client": [
         {
-          "client_id": "185879928180-mcetfpuu3glj71jq9ovsckgh1162cse8.apps.googleusercontent.com",
+          "client_id": "1048090967106-g1nf1be58n4l0ceo76a6r0u7e11nrrq6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBD--A0ibzhEgZjl5czz00frDCe1tRnWoY"
+          "current_key": "AIzaSyC4p8ASgX9zb8puc7ZW7izBDxpL4JyQhL4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "185879928180-mcetfpuu3glj71jq9ovsckgh1162cse8.apps.googleusercontent.com",
+              "client_id": "1048090967106-g1nf1be58n4l0ceo76a6r0u7e11nrrq6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
