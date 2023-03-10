@@ -75,9 +75,11 @@ class _WebViewPageState extends State<WebViewPage> {
             WebViewWidget(
               controller: webViewController,
             ),
-            isLoading ? const Center(child: CircularProgressIndicator(
-              color: Colors.white,
-            )) : const SizedBox(height: 0,),
+            isLoading ? const Center(
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                ),
+            ) : const SizedBox(height: 0,),
           ],
         )
       ),
