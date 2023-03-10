@@ -33,7 +33,6 @@ class _WebViewPageState extends State<WebViewPage> {
             });
           },
           onPageStarted: (String url) {
-
           },
           onPageFinished: (String url) {
             setState(() {
@@ -41,13 +40,6 @@ class _WebViewPageState extends State<WebViewPage> {
             });
           },
           onWebResourceError: (WebResourceError error) {
-            // debugPrint('''
-            //   Page resource error:
-            //   code: ${error.errorCode}
-            //   description: ${error.description}
-            //   errorType: ${error.errorType}
-            //   isForMainFrame: ${error.isForMainFrame}
-            // ''');
           },
           onNavigationRequest: (NavigationRequest request) {
             debugPrint('allowing navigation to ${request.url}');
