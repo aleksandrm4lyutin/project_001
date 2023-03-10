@@ -39,7 +39,8 @@ dependencies:
   firebase_core: ^2.7.0
   cloud_firestore: ^4.1.0
   connectivity_plus: ^3.0.2
-  webview_flutter: ^4.0.5
+  # webview_flutter: ^4.0.5
+  webview_flutter: ^3.0.4
   shared_preferences: ^2.0.18
   firebase_remote_config: ^3.0.13
   firebase_analytics: ^10.1.4
